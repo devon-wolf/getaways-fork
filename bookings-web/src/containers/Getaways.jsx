@@ -13,10 +13,9 @@ const Getaways = () => {
   }, []);
 
   return (
-    <>
-    {loading && <p>Loading</p>}
-    <PlaceList places={places} />
-    </>
+    <div>
+      {loading ? <p>Loading</p> : <PlaceList places={places} />}
+    </div>
   );
 };
 

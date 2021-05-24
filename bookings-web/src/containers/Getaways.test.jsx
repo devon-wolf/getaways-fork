@@ -6,6 +6,11 @@ describe('Getaways page', () => {
 	it('Renders the getaways page', () => {
 		render(<Getaways />);
 		screen.getByText('Loading');
-		const placeList = screen.findByRole('list');
+
+		return waitFor(() => {
+			const placeList = screen.getByLabelText('place list');
+			expect(placeList).not.toBeEmptyDOMElement();
+			expect(placeList).toMatchSnapshot();
+		});
 	});
 })

@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import Place from './Place';
 
 const PlaceList = ({ places }) => {
-  return places.map((place) => <Place key={place.id} {...place} />);
+  return (
+    <ul aria-label="place list">
+      {places.map((place) => (
+        <li key={place.id}>
+          <Place {...place} />
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 PlaceList.propTypes = {
