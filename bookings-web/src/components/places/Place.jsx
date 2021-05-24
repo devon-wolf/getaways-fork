@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import style from './PlaceList.css';
 
 const Place = ({
+  id,
   name,
   description,
   location,
@@ -17,7 +19,7 @@ const Place = ({
   return (
     <div className={style.listEntry}>
       <ul className={style.placeEntry}>
-        <li className={style.placeName}>{name}</li>
+        <li className={style.placeName}><Link to={`/${id}`}>{name}</Link></li>
         <li className={style.description}>{description}</li>
         <li>{location}</li>
         <li>Price per night: {pricePerNight}</li>
@@ -34,6 +36,7 @@ const Place = ({
 };
 
 Place.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
