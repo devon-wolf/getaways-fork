@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { getPlaces } from '../services/placesApi';
+import Place from '../components/places/Place';
+import { getPlaceByID } from '../services/placesApi';
 
-const PlaceDetail = () => {
+const PlaceDetail = ({ match }) => {
+	const [loading, setLoading] = useState(true);
+	const [place, setPlace] = useState({});
+
+	useEffect(() => {
+		getPlaceByID(match.params.id)
+			.then(setPlace)
+			.finally(() => setLoading(false));
+	}, []);
+
 	return (
 		<div>
-			<h2>PLACE DETAIL</h2>
+			{loading ? <p>Loading</p> : <Place {...place} />}
 		</div>
 	);
 };

@@ -5,7 +5,7 @@ import style from './PlaceList.css';
 
 const PlaceList = ({ places }) => {
   return (
-    <ul aria-label="place list" className={style.placeList}>
+    <ul aria-label="place-list" className={style.placeList}>
       {places.map((place) => (
         <li key={place.id}>
           <Place {...place} />
