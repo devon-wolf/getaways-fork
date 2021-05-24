@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from './PlaceList.css';
 
 const Place = ({
   name,
@@ -14,18 +15,21 @@ const Place = ({
   wifi,
 }) => {
   return (
-    <ul>
-      <li>{name}</li>
-      <li>{description}</li>
-      <li>{location}</li>
-      <li>{pricePerNight}</li>
-      <li>{image}</li>
-      <li>{imageThumbnail}</li>
-      <li>{maxGuests}</li>
-      <li>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
-      {pool ? <li>Has a Pool!</li> : null}
-      {wifi ? <li>Free Wifi</li> : null}
-    </ul>
+    <div className={style.listEntry}>
+      <ul className={style.placeEntry}>
+        <li className={style.placeName}>{name}</li>
+        <li className={style.description}>{description}</li>
+        <li>{location}</li>
+        <li>Price per night: {pricePerNight}</li>
+        {/* <li><img alt={name} src={image} /></li> */}
+        <li>Max guests: {maxGuests}</li>
+        <li>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
+        {pool ? <li>Has a Pool!</li> : null}
+        {wifi ? <li>Free Wifi</li> : null}
+      </ul>
+      <img alt={name} src={imageThumbnail} />
+    </div>
+    
   );
 };
 
