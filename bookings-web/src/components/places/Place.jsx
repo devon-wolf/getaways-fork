@@ -14,7 +14,7 @@ const Place = ({
   maxGuests,
   petFriendly,
   pool,
-  wifi,
+  wifi
 }) => {
   return (
     <div className={style.listEntry}>
@@ -28,6 +28,7 @@ const Place = ({
         <li>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
         {pool ? <li>Has a Pool!</li> : null}
         {wifi ? <li>Free Wifi</li> : null}
+        <Link to={`/${id}/book`}>Create Booking</Link>
       </ul>
       <img alt={name} src={imageThumbnail} />
     </div>
