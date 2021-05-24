@@ -4,12 +4,20 @@ import PlaceList from '../components/places/PlaceList';
 
 const Getaways = () => {
   const [places, setPlaces] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getPlaces().then(setPlaces);
+    getPlaces()
+      .then(setPlaces)
+      .finally(() => setLoading(false));
   }, []);
 
-  return <PlaceList places={places} />;
+  return (
+    <>
+    {loading && <p>Loading</p>}
+    <PlaceList places={places} />
+    </>
+  );
 };
 
 export default Getaways;
