@@ -25,7 +25,6 @@ const BookingPage = ({ match }) => {
 			start_date: startDate,
 			end_date: endDate,
 			place_id: place.id,
-			// user_id: match.params.user.id
 		};
 
 		// send booking to backend
