@@ -1,0 +1,34 @@
+.placeList {
+	font-family: monospace;
+	list-style: none;
+	padding-left: unset;
+	padding: 1rem;
+}
+
+.placeList > li {
+	border: solid 2px black;
+	margin: 1rem;
+	padding: 1rem;
+}
+
+.listEntry {
+	display: flex;
+}
+
+.placeEntry {
+	list-style: none;
+	padding-left: unset;
+}
+
+.placeName {
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.description {
+	font-size: 1.025rem;
+}
+
+.placeEntry li {
+	margin: 1rem;
+}
